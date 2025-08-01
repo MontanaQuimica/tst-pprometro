@@ -1,0 +1,96 @@
+#chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99999;
+  font-family: Arial, sans-serif;
+}
+
+/* Ícone do mascote */
+.chat-circle {
+  background: #ffffff; /* fundo branco */
+  color: #000;
+  font-size: 28px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+  overflow: hidden; /* evita que a imagem vaze para fora */
+}
+
+.chat-circle:hover {
+  transform: scale(1.15);
+}
+
+.chat-circle img {
+  width: 85%; /* mascote proporcional dentro do círculo */
+  height: auto;
+  object-fit: contain; /* sem distorção */
+}
+
+/* Caixa do chat */
+.chat-box {
+  width: 350px;
+  height: 450px;
+  background: #ffffff !important; /* força branco opaco */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  z-index: 100000; /* acima de tudo */
+  opacity: 1 !important; /* garante sem transparência */
+  backdrop-filter: none !important; /* remove efeitos de blur */
+}
+
+/* Cabeçalho do chat */
+.chat-header {
+  background: #0d6efd;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Corpo do chat */
+.chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #ffffff; /* branco também no corpo */
+}
+
+/* Rodapé do chat */
+.chat-footer {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  background: #ffffff; /* rodapé branco */
+}
+
+.chat-footer input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.chat-footer button {
+  margin-left: 5px;
+  background: #0d6efd;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+}

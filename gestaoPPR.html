@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="chatbot.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://www.montana.com.br/wp-content/themes/montana/dist/imgs/favicons.png"
+        type="image/x-icon">
+
+    <title>Gestão PPRômetro | Montana Química</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        /* Pode colocar novas class aqui depois colocamos em um arquivo separado */
+
+        .custom-background {
+            background-image: url('img/FundoMontana.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .custom-footer {
+            background-color: #cfd1da70;
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+        }
+    </style>
+</head>
+
+
+
+
+
+<body class="custom-background">
+
+    <header class="bg-dark px-5 bg-opacity-75">
+        <div class="d-flex flex-column flex-md-row align-items-center py-2 mb-4">
+            <!-- Logo -->
+            <a href="/" class="d-flex align-items-center text-decoration-none">
+                <span class="fs-4">
+                    <img width="190" height="80" src="img/LogoFundoBranco_idealParamadeira.png" alt="Logo" />
+                </span>
+            </a>
+
+            <!-- Menu -->
+            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                <a class="me-3 py-2 text-decoration-none  text-white fw-bold fs-5" target="_blank"
+                    href="https://montanaquimica.sharepoint.com/SitePages/Home.aspx">Intranet Montana | <a>
+                        <a class="me-3 py-2 text-decoration-none text-white fw-bold fs-5 "
+                            href="https://www.montana.com.br/" target="_blank">Montana Química |</a>
+                        <a class="py-2 text-decoration-none text-white fw-bold fs-5" href="index.html"
+                            target="_blank">PPRômetro</a>
+
+            </nav>
+        </div>
+
+
+    </header>
+    <div class="container">
+        <!-- Carrosel com os valores da empresa -->
+        <div style="display: flex;">
+            <!-- Carrosel com os valores da empresa -->
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-theme="light"
+                style="flex: 1; background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">
+
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                        aria-label="Slide 1" aria-current="true"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+                        class=""></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
+                        class=""></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"
+                        class=""></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"
+                        class=""></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6"
+                        class=""></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="6" aria-label="Slide 7"
+                        class=""></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="7" aria-label="Slide 8"
+                        class=""></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                        </svg>
+                        <div class="container">
+                            <div class="carousel-caption text-start">
+                                <h1 style="text-align: center;">Satisfação do Cliente</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                        </svg>
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1 style="text-align: center;">Desenvolvimento de Líderes</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                        </svg>
+                        <div class="container">
+                            <div class="carousel-caption text-end">
+                                <h1 style="text-align: center;">Inovação</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                        </svg>
+                        <div class="container">
+                            <div class="carousel-caption text-end">
+                                <h1 style="text-align: center;">Foco no Resultado</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                        </svg>
+                        <div class="container">
+                            <div class="carousel-caption text-end">
+                                <h1 style="text-align: center;">Melhoria Contínua</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                        </svg>
+                        <div class="container">
+                            <div class="carousel-caption text-end">
+                                <h1 style="text-align: center;">Trabalho em Equipe</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                        </svg>
+                        <div class="container">
+                            <div class="carousel-caption text-end">
+                                <h1 style="text-align: center;">Excelência</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Conteudo principal e formulario -->
+        <main class="bg-light bg-opacity-75">
+            <form action="#" method="post" onsubmit="enviaForm(this)">
+                <div class="row p-3">
+                    <div class="col-md-12 col-lg-12">
+                        <h4 class="mb-3 text-center">Administração Ebitda</h4>
+
+                        <div class="row g-3">
+
+                            <!-- Campo Valor Ebitda -->
+                            <div class="col-sm-6">
+                                <label for="percentualEbitida" class="form-label">Valor Ebitda (%)</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control me-2" id="percentualEbitida"
+                                        name="percentualEbitida" maxlength="4" required readonly required
+                                        onfocusout="EbitdaPercentual()">
+                                    <button type="button" id="btnEditarEbitda" class="btn btn-warning">
+                                        Alterar
+                                    </button>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Por favor, insira um valor maior que 0.
+                                </div>
+
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="taxaSindicato" class="form-label">Taxa Sindicato</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control me-2" id="taxaSindicato" name="taxaSindicato"
+                                        required readonly>
+                                    <button type="button" id="btnEditarTaxa" class="btn btn-warning">
+                                        Alterar
+                                    </button>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            <hr class="my-4">
+
+                            <!-- Tabela de Dedução IR -->
+                            <h5 class="text-center mb-3">Tabela de Dedução do IR</h5>
+                            <div class="table-responsive">
+                                <table id="tabelaIR"
+                                    class="table table-bordered table-striped table-hover text-center align-middle">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>De (R$)</th>
+                                            <th>Até (R$)</th>
+                                            <th>Alíquota</th>
+                                            <th>Dedução (R$)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="text" class="form-control text-center" value="0,01"
+                                                    disabled></td>
+                                            <td><input type="text" class="form-control text-center" value="7.640,80"
+                                                    disabled></td>
+                                            <td><input type="text" class="form-control text-center" value="0,00%"
+                                                    disabled></td>
+                                            <td><input type="text" class="form-control text-center" value="-" disabled>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control text-center" value="7.640,81"
+                                                    disabled></td>
+                                            <td><input type="text" class="form-control text-center" value="9.922,28"
+                                                    disabled></td>
+                                            <td><input type="text" class="form-control text-center" value="7,50%"
+                                                    disabled></td>
+                                            <td><input type="text" class="form-control text-center" value="573,06"
+                                                    disabled></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control text-center" value="9.922,29"
+                                                    disabled></td>
+                                            <td><input type="text" class="form-control text-center" value="13.167,00"
+                                                    disabled></td>
+                                            <td><input type="text" class="form-control text-center" value="15,00%"
+                                                    disabled></td>
+                                            <td><input type="text" class="form-control text-center" value="1.317,23"
+                                                    disabled></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control text-center" value="13.167,01"
+                                                    disabled></td>
+                                            <td><input type="text" class="form-control text-center" value="16.380,38"
+                                                    disabled></td>
+                                            <td><input type="text" class="form-control text-center" value="22,50%"
+                                                    disabled></td>
+                                            <td><input type="text" class="form-control text-center" value="2.304,76"
+                                                    disabled></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control text-center" value="16.380,38"
+                                                    disabled></td>
+                                            <td><input type="text" class="form-control text-center"
+                                                    value="99.999.999,00" disabled></td>
+                                            <td><input type="text" class="form-control text-center" value="27,50%"
+                                                    disabled></td>
+                                            <td><input type="text" class="form-control text-center" value="3.123,78"
+                                                    disabled></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Botão de Alteração da Tabela -->
+                            <div class="d-flex justify-content-center mb-3">
+                                <button type="button" id="btnEditarTabela" class="btn btn-warning">
+                                    Alterar Tabela
+                                </button>
+                            </div>
+
+
+                            <hr class="my-4">
+                        </div>
+
+                        <!-- Link para o JS externo -->
+                        <script src="js/tabela-ir.js"></script>
+
+
+
+            </form>
+    </div>
+    </div>
+
+    </main>
+    </div>
+
+
+
+    <!-- Rodapé -->
+    <footer class="bg-light mt-5 custom-footer bg-opacity-75">
+        <div class="row">
+            <div class="text-center">
+                <img class="img-fluid" src="img/Mascote.png" alt="teleco" width="310" height="250">
+                <p class="text-light">© Copyright Montana Química @2023 | Tecnologia da Informação</p>
+                <p class="text-light">© Desenvolvido por Julia Bonifacio</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+
+</html>

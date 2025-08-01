@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="chatbot.js"></script>
+  <link rel="icon" href="https://www.montana.com.br/wp-content/themes/montana/dist/imgs/favicons.png"
+    type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+
+  <title>PPRômetro | Montana Química</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <style>
+    /* Pode colocar novas class aqui depois colocamos em um arquivo separado */
+
+    .custom-background {
+      background-image: url('img/FundoMontana.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    .custom-footer {
+      background-color: #cfd1da70;
+      background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    }
+  </style>
+</head>
+<!-- Chat Widget -->
+<div id="chat-widget">
+  <div id="chat-icon" class="chat-circle">
+    <img src="img/Mascote.png" alt="Mascote" />
+  </div>
+
+  <div id="chat-box" class="chat-box d-none">
+    <div class="chat-header">
+      <span>Assistente PPRÔMETRO</span>
+      <button id="close-chat" class="btn-close btn-close-white"></button>
+    </div>
+    <div class="chat-body">
+      <div class="msg bot">Olá! 👋 Eu sou o Teca, Como posso te ajudar hoje?</div>
+      <div class="msg-options">
+        <button class="btn btn-outline-primary btn-sm">Como funciona O Cálculo do PPR?</button>
+        <br>
+        <!-- <button class="btn btn-outline-primary btn-sm">Falar com suporte</button>
+        <button class="btn btn-outline-primary btn-sm">Quero contratar</button> -->
+      </div>
+    </div>
+    <div class="chat-footer">
+      <input type="text" id="chat-input" placeholder="Digite sua mensagem..." />
+      <button id="send-msg">➤</button>
+    </div>
+  </div>
+</div>
+
+
+<body class="custom-background">
+  <header class="bg-dark px-5 bg-opacity-75">
+    <div class="d-flex flex-column flex-md-row align-items-center py-2 mb-4">
+      <!-- Logo -->
+      <a href="/" class="d-flex align-items-center text-decoration-none">
+        <span class="fs-4">
+          <img width="190" height="80" src="img/LogoFundoBranco_idealParamadeira.png" alt="Logo" />
+        </span>
+      </a>
+
+      <!-- Menu -->
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a class="me-3 py-2 text-decoration-none  text-white fw-bold fs-5" target="_blank"
+          href="https://montanaquimica.sharepoint.com/SitePages/Home.aspx">Intranet Montana | <a>
+            <a class="me-3 py-2 text-decoration-none text-white fw-bold fs-5 " href="https://www.montana.com.br/"
+              target="_blank">Montana Química |</a>
+            <a class="py-2 text-decoration-none text-white fw-bold fs-5" href="gestaoPPR.html" target="_blank"> Gestão
+              PPR</a>
+
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div style="display: flex;">
+      <!-- Carrosel com os valores da empresa -->
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-theme="light"
+        style="flex: 1; background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">
+
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"
+            aria-current="true"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+            class=""></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
+            class=""></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"
+            class=""></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"
+            class=""></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6"
+            class=""></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="6" aria-label="Slide 7"
+            class=""></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="7" aria-label="Slide 8"
+            class=""></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+            </svg>
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1 style="text-align: center;">Satisfação do Cliente</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+            </svg>
+            <div class="container">
+              <div class="carousel-caption">
+                <h1 style="text-align: center;">Desenvolvimento de Líderes</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+            </svg>
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1 style="text-align: center;">Inovação</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+            </svg>
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1 style="text-align: center;">Foco no Resultado</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+            </svg>
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1 style="text-align: center;">Melhoria Contínua</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+            </svg>
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1 style="text-align: center;">Trabalho em Equipe</h1>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+            </svg>
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1 style="text-align: center;">Excelência</h1>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </div>
+      <div>
+        <img src="img\laboratorioIdeias.png" alt="Estamos esperando a sua ideia!" class="thumbnailImage-564"
+          height="150">
+      </div>
+    </div>
+    <!-- Conteudo principal e formulario -->
+    <main class="bg-light bg-opacity-75">
+      <form onsubmit="event.preventDefault(); enviaForm(this)">
+        <div class="row p-3">
+          <div class="col-md-12 col-lg-12">
+            <h4 class="mb-3 text-center">Descubra o valor do seu PPR$</h4>
+
+            <div class="row g-3">
+
+              <div class="col-sm-6">
+                <label for="salario" class="form-label">Salário</label>
+                <input type="text" class="form-control" id="salario" name="salario"
+                  placeholder="Informe seu salário Bruto" maxlength="10" required>
+                <div class="invalid-feedback">
+                  Valor não padrão
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="mesesTrabalhado" class="form-label">Quantidade de Meses Trabalhado no último ano</label>
+                <select id="mesesTrabalhado" class="form-select" required name="qtdMesesTrabalhado">
+                  <option value="0">Selecione</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="9">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+
+                </select>
+              </div>
+
+
+              <div class="col-md-6">
+                <label for="recebePeri" class="form-label">Recebe periculosidade</label>
+                <select id="recebePeri" class="form-select" name="recebePeri" required>
+                  <option value="">Selecione</option>
+                  <option value="sim">Sim</option>
+                  <option value="nao">Não</option>
+                </select>
+              </div>
+
+
+              <div class="col-md-6">
+                <label for="multiploCargos" class="form-label">Múltiplo</label>
+                <select id="multiploCargos" class="form-select" name="multiploCargos" required>
+                  <option value="1.1">1.1</option>
+                  <option value="2.3">2.3</option>
+                  <option value="3">3.3</option>
+                </select>
+              </div>
+
+
+              <div class="col-md-6">
+                <label for="selectComissao" class="form-label">Recebe Comissões</label>
+                <select id="selectComissao" class="form-select" name="selectComissao" required>
+                  <option value="">Selecione</option>
+                  <option value="sim">Sim</option>
+                  <option value="nao">Não</option>
+                </select>
+              </div>
+
+              <div id="divComissao" class="col-sm-6 d-none">
+                <label for="comissao" class="form-label">Valor comissão</label>
+                <input type="text" class="form-control" name="comissao" id="comissao"
+                  placeholder="Digite o valor da comissão" maxlength="10">
+              </div>
+
+              <div class="col-sm-6">
+                <label for="percentualAvaliacaocompor" class="form-label">Pontos na Avaliação</label>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <select id="valorPontos" class="form-select" required name="valorPontos">
+                      <option value="0">Selecione</option>
+                      <option value="0">De 25.00 Até 36.99</option>
+                      <option value="5">De 37.00 Até 61.99</option>
+                      <option value="10">De 62.00 Até 91.99</option>
+                      <option value="12">De 92.00 Até 100.00</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-3">
+                    <input type="text" class="form-control" name="porcetagemPontos" id="porcetagemPontos" readonly>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-sm-6">
+                <label for="perIndivudualAt" class="form-label">Percentual metas individuais atingido</label>
+                <input type="text" class="form-control" name="percIndividual" id="perIndividual" maxlength="4" required
+                  onfocusout="MetasPercentual()">
+              </div>
+
+              <button class="w-100 btn btn-primary btn-lg" type="submit">Calcular PPR</button>
+
+
+              <div class="col-sm-12">
+
+                <ol class="list-group list-group-numbered">
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Valor do salário com periculosidade 30%</div>
+                      <p id="valorCalculadoPericulosidade"></p>
+
+                    </div>
+                  </li>
+
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Base cálculo PPR</div>
+                      <p id="valorBaseCalculoPPR"></p>
+                    </div>
+                  </li>
+
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Percentual EBITIDA</div>
+                      <p name="valorEbitda " id="valorEbitda"></p>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Percentual EBTIDA x 60% (Meta Corporativa)</div>
+                      <p id="baseCalculoMetaCoporativa"></p>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Percentual EBTIDA x 30% (Metas Individual)</div>
+                      <p id="valorMetasIndividuais"></p>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Percentual Av. Comportamental</div>
+                      <p id="idpercentualAvaliacaocompor"></p>
+                    </div>
+                  </li>
+                  <div style="display: none;">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                      <div class="ms-2 me-auto">
+                        <div class="fw-bold">Percentual metas individuais PPR</div>
+                        <p id="percetualMetaIndividual"></p>
+                      </div>
+                    </li>
+                  </div>
+
+
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Percentual PPR</div>
+                      <p id="percentualPPR"></p>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">PPR total (sem IR)</div>
+                      <p id="baseCalculoSemIr"></p>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Alíquota IR</div>
+                      <p name="aliquotaIr" id="aliquotaIr"></p>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Dedução IR</div>
+                      <p name="deducaoIR" id="deducaoIR"></p>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Total IR</div>
+                      <p name="Total IR" id="totalIR"></p>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Líquido PPR</div>
+                      <p id="liquidoPPR"></p>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Valor Simulado do PPR</div>
+                      <p id="valorSimulado"></p>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Taxa Sindicato</div>
+                      <p id="taxa">R$75,00</p>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Valor Final PPR</div>
+                      <p id="valorFinal"></p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+
+
+              <div class="alert alert-primary" role="alert">
+                <h4 class="alert-heading">Atenção!</h4>
+                <p>Este valor é apenas ilustrativo, podendo variar conforme os resultados da empresa e das metas
+                  individuais, alterações salariais, comissões, meses trabalhado, periculosidade e da tabela de imposto
+                  de renda.</p>
+
+              </div>
+
+              <hr class="my-4">
+
+              <div class="principal__filhos" id="divsindicato" style="display: none;">
+                <div>
+                  <label for="garantiaEbitida">Garantia do Mínimo PPR (EBITIDA)</label>
+                  <input type="text" class="input-box" id="garantiaEbitida" name="garantiaEbitida" value="20.000.000,00"
+                    readonly><br><br>
+                </div>
+
+                <div>
+                  <label for="minimoSindicato">Mínimo sindicato (R$ 1.200,00) </label>
+                  <input type="text" id="baseCalculo" name="minimoSindicato" class="input-box" value="R$1.200,00"
+                    readonly><br><br>
+                </div>
+
+                <div>
+                  <label for="pesoEbitida">Peso EBTIDA 60%</label>
+                  <input type="text" id="pesoEbitida" class="input-box" value="0,00" readonly><br><br>
+                </div>
+
+                <div>
+                  <label for="metasIndi">Metas Individuais (30%) </label>
+                  <input type="text" id="metasIndi" name="metasIndi" class="input-box" value="0,00" readonly><br><br>
+                </div>
+
+                <div>
+                  <label for="avaliacaoCom">Avaliação Comportamental</label>
+                  <input type="text" id="avaliacaoCom" name="avaliacaoCom" value="0,00" class="input-box"
+                    readonly><br><br>
+                </div>
+
+                <div>
+                  <label for="Descobrindoovalor">Valor PPR </label>
+                  <input type="text" class="input-box" id="Descobrindoovalor" value="0,00" readonly><br><br>
+                </div>
+
+              </div>
+
+
+
+      </form>
+  </div>
+  </div>
+  <!--  Verifica se o valor da Ebitida foi alcançado -->
+  <div style="display: none;">
+    <label for="ebitidaProjetado">EBITDA projetado </label>
+    <input type="text" class="input-box" name="ebitidaProjetado" id="ebitidaProjetado" value="46.796.739,00 "
+      readonly><br><br>
+  </div>
+  </main>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="bg-light mt-5 custom-footer bg-opacity-75">
+    <div class="row">
+      <div class="text-center">
+        <img class="img-fluid" src="img/Mascote.png" alt="teleco" width="310" height="250">
+        <p class="text-light">© Copyright Montana Química @2023 | Tecnologia da Informação</p>
+        <p class="text-light">© Desenvolvido por Julia Bonifacio</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
